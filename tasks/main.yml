@@ -1,0 +1,18 @@
+---
+# tasks file for bashlinux_users
+
+- name: create groups and users
+  block:
+    - name: create groups
+      import_tasks: create_group.yml
+
+    - name: create users
+      include_tasks: create_users.yml
+      with_items: "{{ group_users }}"
+  when: "{{ group_name }}" != ""
+
+- name: missed group name notification
+  debug:
+    msg: "NOTICE: Group name has not been provided, no group and/or user has been created."
+  when: "{{ group_name }}" == ""
+

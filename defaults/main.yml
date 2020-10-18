@@ -1,0 +1,7 @@
+---
+# defaults file for bashlinux_users
+
+group_id: ""
+group_name: ""
+group_sudo: false
+group_users: ""

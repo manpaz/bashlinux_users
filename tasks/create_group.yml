@@ -1,0 +1,10 @@
+---
+- group:
+    name: "{{ group_name }}"
+    gid: "{{ group_id }}"
+
+- copy:
+    content: "%{{ group_name }} ALL=(ALL) NOPASSWD:ALL"
+    dest: "/etc/sudoers.d/90-{{ group_name }}"
+    mode: 0644
+  when: group_sudo

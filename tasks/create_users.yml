@@ -1,0 +1,23 @@
+---
+- user:
+    name: "{{ item.name }}"
+    groups: "{{ group_name }}"
+    uid: "{{ item.uid }}"
+
+- file:
+    path: "/home/{{ item.name }}/.ssh"
+    owner: "{{ item.name }}"
+    group: "{{ item.name }}"
+    mode: 0700
+    state: directory
+
+- file:
+    path: "/home/{{ item.name }}/.ssh/authorized_keys"
+    owner: "{{ item.name }}"
+    group: "{{ item.name }}"
+    mode: 0600
+    state: touch
+
+- lineinfile:
+    path: "/home/{{ item.name }}/.ssh/authorized_keys"
+    line: "{{ item.ssh_key }}"
