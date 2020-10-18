@@ -61,7 +61,8 @@ nonprivileged_group_name:
     - name: user_beta
       uid: 2002
       ssh_key: "ssh-rsa AAABBBCCCB2....== user_beta@example.com"
-
+  roles:
+    - bashlinux_users
 ```
 
 License
