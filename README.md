@@ -7,17 +7,15 @@ Role Variables
 --------------
 
 The settable variables for this role are:
-```yaml
-group_name: ""          # Group Name. If not provided playbook nothing will be done and a message saying so will be displayed
-                        # (mandatory)
-group_id: ""            # Group ID. If not provided, next gid available on system will be used
-                        # Desired if the same "gid" is needed across systems
-                        # (default empty)
-group_sudo: false       # Flag granting sudo privileges to members of this group
-                        # (default false)
-group_users: ""         # Name of the variable holding the list of users. If not provided, no users will be created
-                        # (default empty)
-```
+- group_name:   Group Name. If not provided playbook nothing will be done and a message saying so will be displayed
+                (mandatory)
+- group_id:     Group ID. If not provided, next gid available on system will be used
+                Desired if the same "gid" is needed across systems
+                (default empty)
+- group_sudo:   Flag granting sudo privileges to members of this group
+                (default false)
+- group_users:  Name of the variable holding the list of users. If not provided, no users will be created
+                (default empty)
 
 Ideally, one might need to either, enable the `group_sudo` flag, pass the list of users through `group_users`, or both, otherwise the `group` module should suffice the group creation.
 
