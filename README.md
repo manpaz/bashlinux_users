@@ -57,10 +57,10 @@ nonprivileged_group_name:
   users:
     - name: user_alpha
       uid: 2001
-      ssh_key: 'ssh-rsa AAABBBCCCA1....== user_alpha@example.com"
+      ssh_key: "ssh-rsa AAABBBCCCA1....== user_alpha@example.com"
     - name: user_beta
       uid: 2002
-      ssh_key: 'ssh-rsa AAABBBCCCB2....== user_beta@example.com"
+      ssh_key: "ssh-rsa AAABBBCCCB2....== user_beta@example.com"
 
 ```
 
